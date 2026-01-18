@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Convocation - Rice Balloting</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+         <video class="video-background" autoplay muted loop playsinline>
+            <source src="./assets/home-page.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="welcome-box">
+                <h1>Samuel Convocation</h1>
+                <p class="subtitle">Rice Balloting System</p>
+                <button class="btn" onclick="showForm()">CLICK TO ENTER</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Page -->
+    <div id="formPage" class="page">
+        <video class="video-background" autoplay muted loop playsinline>
+            <source src="./assets/website-video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="form-container">
+                <h1 style="margin-bottom: 30px;">Registration Form</h1>
+                <form id="ballotForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matric">Matric Number *</label>
+                        <input type="text" id="matric" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department *</label>
+                        <input type="text" id="department" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">Level *</label>
+                        <select id="level" required>
+                            <option value="">Select Level</option>
+                            <option value="100">100 Level</option>
+                            <option value="200">200 Level</option>
+                            <option value="300">300 Level</option>
+                            <option value="400">400 Level</option>
+                            <option value="500">500 Level</option>
+                            <option value="600">600 Level</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="howKnow">How do you know Samuel? *</label>
+                        <textarea id="howKnow" required placeholder="Tell us how you know Samuel..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn">SUBMIT</button>
+                </form>
+
+                <div id="errorMessage" class="error-message hidden">
+                    ❌ BALLOTING QUOTA EXCEEDED<br>TRY AGAIN LATER
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="./script.js" charset="UTF-8"></script>
+</body>
+</html>
